@@ -10,6 +10,7 @@ async function bootstrap(): Promise<void> {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   app.useGlobalPipes(new ValidationPipe({ transform: true })); // apply pipe validation
+  app.enableCors();
 
   // Get app config for cors settings and starting the app.
   const appConfig: AppConfigService = app.get(AppConfigService);
