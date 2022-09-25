@@ -11,6 +11,7 @@ import {
 import { EntityId } from 'typeorm/repository/EntityId';
 import { BaseEntity } from './base.entity';
 import { randomUUID } from 'crypto';
+// Edit to fix not found firebase
 import * as firebase from 'firebase-admin';
 export class BaseService<T extends BaseEntity> {
   constructor(private readonly repository: Repository<T>) {}
@@ -60,7 +61,7 @@ export class BaseService<T extends BaseEntity> {
       const imageName = image.originalname.split('.');
       const newImageName = randomUUID() + '.' + imageName[imageName.length - 1];
       const url = `images/${newImageName}`;
-
+      // fix not found firebase
       const bucket = firebase.storage().bucket();
       const file = bucket.file(url);
       const contents = image.buffer;
