@@ -37,9 +37,9 @@ import { SharedModule } from './shared/shared.module';
     AutomapperProviderModule,
     FireBaseConfigModule,
     // AccountsModule,
-    ProfileModule,
+    // ProfileModule,
     SharedModule,
-    AuthModule,
+    // AuthModule,
     KitchenModule,
 
     FoodCategoriesModule,
@@ -48,7 +48,7 @@ import { SharedModule } from './shared/shared.module';
     StationsModule,
     PackagesModule, //-> update
     // ====================================
-    DeliveryTripModule,
+    // DeliveryTripModule,
     ShippersModule, //-> update
     TimeSlotsModule, //-> update
 
