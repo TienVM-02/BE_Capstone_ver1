@@ -2,7 +2,8 @@
 import { Controller, Get, Param } from '@nestjs/common';
 // import { GoongMapsService } from 'shared/goong-maps.service';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
-import { AccountsService } from './models/accounts/accounts.service';
+import { AccountsService } from 'src/models/accounts/accounts.service';
+// import { AccountsService } from './models/accounts/accounts.service';
 // import { Public } from 'decorators/public.decorator';
 // import { FirebaseMessageService } from 'providers/firebase/message/firebase-message.service';
 

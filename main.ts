@@ -1,11 +1,13 @@
-import { AppConfigService } from './config/app/config.service';
+// import { AppConfigService } from './config/app/config.service';
 import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ValidationPipe } from '@nestjs/common';
 import * as firebaseAdmin from 'firebase-admin';
-import { FireBaseConfigService } from './config/firebase/config.service';
+import { AppConfigService } from 'src/config/app/config.service';
+import { FireBaseConfigService } from 'src/config/firebase/config.service';
+// import { FireBaseConfigService } from './config/firebase/config.service';
 async function bootstrap(): Promise<void> {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
