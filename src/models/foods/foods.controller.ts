@@ -38,7 +38,7 @@ export class FoodsController {
     description: 'GET ALL FOOD',
     type: [FoodDTO],
   })
-  @UseInterceptors(MapInterceptor(FoodEntity, FoodDTO, { isArray: true }))
+  // @UseInterceptors(MapInterceptor(FoodEntity, FoodDTO, { isArray: true }))
   async findAll(): Promise<FoodEntity[]> {
     const listFood = await this.foodsService.getAllFood();
     if (!listFood || listFood.length == 0) {
@@ -57,7 +57,7 @@ export class FoodsController {
     description: 'GET ALL ACTIVE FOOD',
     type: [FoodDTO],
   })
-  @UseInterceptors(MapInterceptor(FoodEntity, FoodDTO, { isArray: true }))
+  // @UseInterceptors(MapInterceptor(FoodEntity, FoodDTO, { isArray: true }))
   async findAllActiveFood(): Promise<FoodEntity[]> {
     const listFood = await this.foodsService.getAllActiveFood();
     if (!listFood || listFood.length == 0) {
@@ -76,7 +76,7 @@ export class FoodsController {
     description: 'GET FOOD BY ID',
     type: FoodDTO,
   })
-  @UseInterceptors(MapInterceptor(FoodEntity, FoodDTO))
+  // @UseInterceptors(MapInterceptor(FoodEntity, FoodDTO))
   async findFoodById(@Param('id') id: string): Promise<FoodEntity> {
     const food = await this.foodsService.findOne({
       where: { id: id },
@@ -98,7 +98,7 @@ export class FoodsController {
     description: 'GET FOOD BY CATEGORY',
     type: [FoodDTO],
   })
-  @UseInterceptors(MapInterceptor(FoodEntity, FoodDTO, { isArray: true }))
+  // @UseInterceptors(MapInterceptor(FoodEntity, FoodDTO, { isArray: true }))
   async findFoodByCategory(@Param('id') idCate: string): Promise<FoodEntity[]> {
     return await this.foodsService.getFoodByCategory(idCate);
   }

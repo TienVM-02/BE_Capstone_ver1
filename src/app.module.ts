@@ -1,8 +1,8 @@
-// import { JwtAuthGuard } from './guards/jwt-auth.guard';
 import { Module } from '@nestjs/common';
 import { RolesGuard } from './guards/role.guard';
 import { APP_FILTER, APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
 // import { TestController } from 'src/app.controller';
+import { JwtAuthGuard } from './guards/jwt-auth.guard';
 import { AppConfigModule } from 'src/config/app/config.module';
 import { AllExceptionsFilter } from 'src/exceptions/catch-all-exception.filter';
 import { AccountsModule } from 'src/models/accounts/accounts.module';
@@ -26,7 +26,7 @@ import { DeliveryTripModule } from './models/deliveryTrips/deliveryTrip.module';
 import { PackageItemModule } from './models/package-item/package-item.module';
 import { ProfileModule } from './models/profiles/profile.module';
 import { SharedModule } from './shared/shared.module';
-
+import { ScheduleModule } from '@nestjs/schedule';
 // import { FirebaseProviderModule } from 'providers/firebase/provider.module';
 
 @Module({
@@ -36,10 +36,10 @@ import { SharedModule } from './shared/shared.module';
     JwtProviderModule,
     AutomapperProviderModule,
     FireBaseConfigModule,
-    // AccountsModule,
-    // ProfileModule,
+    AccountsModule,
+    ProfileModule,
     SharedModule,
-    // AuthModule,
+    AuthModule,
     KitchenModule,
 
     FoodCategoriesModule,
@@ -57,16 +57,15 @@ import { SharedModule } from './shared/shared.module';
 
     // ImagesModule,
     // FirebaseProviderModule,
+    ScheduleModule.forRoot(),
   ],
   controllers: [],
   providers: [
     { provide: APP_FILTER, useClass: AllExceptionsFilter },
     { provide: APP_INTERCEPTOR, useClass: LoggingInterceptor },
     { provide: APP_INTERCEPTOR, useClass: TransformInterceptor },
-    // { provide: APP_GUARD, useClass: JwtAuthGuard },
+    { provide: APP_GUARD, useClass: JwtAuthGuard },
     { provide: APP_GUARD, useClass: RolesGuard },
   ],
 })
 export class AppModule {}
-
-//Den bao gio moi co the quen nhung cau chuyen ma ta da qua.

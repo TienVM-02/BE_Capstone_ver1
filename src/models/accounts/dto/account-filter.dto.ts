@@ -4,7 +4,7 @@ import { ApiProperty } from '@nestjs/swagger';
 import { AccountStatusEnum } from 'src/common/enums/accountStatus.enum';
 import { RoleEnum } from 'src/common/enums/role.enum';
 
-export class AccountFilterDto extends BaseFilter {
+export class AccountFilterDTO extends BaseFilter {
   @ApiProperty({ required: false })
   phone: string;
 
