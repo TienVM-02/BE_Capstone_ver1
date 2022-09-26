@@ -44,11 +44,11 @@ import { SharedModule } from './shared/shared.module';
 
     FoodCategoriesModule,
     FoodsModule,
-    // FoodGroupModule,
+    FoodGroupModule,
     StationsModule,
     PackagesModule, //-> update
     // ====================================
-    // DeliveryTripModule,
+    DeliveryTripModule,
     ShippersModule, //-> update
     TimeSlotsModule, //-> update
 
