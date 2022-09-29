@@ -40,12 +40,12 @@ import { ScheduleModule } from '@nestjs/schedule';
     ProfileModule,
     SharedModule,
     AuthModule,
-    KitchenModule,
+    // KitchenModule,
 
     FoodCategoriesModule,
     FoodsModule,
     FoodGroupModule,
-    StationsModule,
+    // StationsModule,
     PackagesModule, //-> update
     // ====================================
     DeliveryTripModule,
